@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter
+@Setter
 @ToString
 public class Customer implements Serializable {
 
@@ -14,12 +15,13 @@ public class Customer implements Serializable {
 	private String firstName;
 	private String lastName;
 	private String email;
-	public Customer(String firstName, String lastName, String email) {
+	public Customer() {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 	}
+	
 	
 
 }
