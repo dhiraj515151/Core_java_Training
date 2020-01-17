@@ -28,7 +28,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		Customer customer = new Customer(firstName, lastName, email);
 		pStatement=connection.prepareStatement("insert into customer(firstName,lastName,email) "
 													+ "values(?,?,?)");
-		System.out.println(customer.getEmail());
+		
 		pStatement.setString(1, customer.getFirstName());
 		pStatement.setString(2, customer.getLastName());
 		pStatement.setString(3, customer.getEmail());
