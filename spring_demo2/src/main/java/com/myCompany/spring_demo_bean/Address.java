@@ -11,7 +11,8 @@ public class Address {
 	private String zipCode;
 	@Override
 	public String toString() {
-		return "Address [addressLine1=" + addressLine1 + ", addressLine2=" + addressLine2 + ", phoneNumber="
+		return "Address [addressLine1=" + addressLine1 + ", addressLine2=" 
+				+ addressLine2 + ", phoneNumber="
 				+ phoneNumber + ", zipCode=" + zipCode + "]";
 	}
 	
