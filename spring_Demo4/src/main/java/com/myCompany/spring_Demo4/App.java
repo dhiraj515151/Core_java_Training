@@ -47,11 +47,13 @@ public class App
         	        	System.out.println(i.next());
         	        }
         	        break;
-        	case 3: 
+        
+        	case 0: 
+        			
+        			System.exit(0);
         			break;
-        	case 0: choice = 0;
-        			break;
-        	default: break;		
+        	default:
+        			break;		
         	}
         }
         while(choice!=0);
