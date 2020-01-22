@@ -25,14 +25,17 @@ public class PersonDAOImpl implements PersonDAO {
 			transaction.begin();
 			session.save(person);
 			transaction.commit();
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 		return person;
 	}
 
 	@Override
-	public List<Person> getAllPersons() {
+	public List<Person> getAllPersons()
+	{
 		Query query=session.createQuery("from Person");
 		return query.list();
 	}

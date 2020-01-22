@@ -70,35 +70,33 @@ public class App
     				service.createCustomer(new Customer( uid, fname, lname, emailId));
     				break;
     		case 2:
-    			
     				list = service.getAllCustomers();
     				Iterator i = list.iterator();
     				while(i.hasNext())
     				{
         			 System.out.println(i.next());
     				}
-    				
     				break;
     				
     		case 3:
 
-				System.out.print("uid>> ");
-				uid=br.readLine();
-				list=service.getCustomerById();
-				System.out.println(list);
-				if(list.isEmpty())
-				{
+					System.out.print("uid: ");
+					uid=br.readLine();
+					list=service.getCustomerById();
+					System.out.println(list);
+					if(list.isEmpty())
+					{
 					System.out.println("customer not found");
-				}
+					}
 				else
 				{
-					System.out.format("%-20s%-20s%-20s%-20s\n", "ID","FIRST_NAME","LAST_NAME","EMIL");
+					System.out.format("%-20s%-20s%-20s%-20s\n", "ID","FIRST_NAME","LAST_NAME","EMAIL");
 					list.forEach(c->{
 						System.out.println(c);
 					});
 				}
 				break;
-				
+								
     		}
     			
     	}while(choice !=0);
