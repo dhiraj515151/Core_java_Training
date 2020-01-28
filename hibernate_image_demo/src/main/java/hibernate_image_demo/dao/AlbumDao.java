@@ -9,5 +9,7 @@ public Album createAlbum(Album adao);
 public List<Album> getAlbums();
 public Album findById(int id);
 public void deleteById(int id);
+void UpdateById(int id);
 public void systemExit();
+
 }

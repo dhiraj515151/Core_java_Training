@@ -40,36 +40,36 @@ public class AlbumDaoImpl implements AlbumDao{
 
 	@Override
 	public void deleteById(int id) {
-		//Deletion via photo
+		
 		Photo photo = session.get(Photo.class, id);
-		//Photo photo = album.getPhoto();
+		
 		if(photo!=null)
 		{
 			session.getTransaction().begin();
 			session.delete(photo);
 			session.getTransaction().commit();
-			System.out.println("Deleted.");
+			
 		}
 		
+		
+	}
+	@Override
+	public void UpdateById(int id)
+	{
+	Photo photo = session.get(Photo.class, id);
+	if(photo!= null)
+	{
+		session.getTransaction().begin();
+		session.update(photo);
+		session.getTransaction().commit();
+	}
 	}
 
-//	@Override
-//	public Album updateUrl(int id, String url, LocalDate date) {
-//		Album album = session.get(Album.class, id);
-//		if(album!=null)
-//		{	album.setDate(date);
-//		    album.getPhoto().setUrl(url);
-//			session.getTransaction().begin();
-//			session.save(album);
-//			session.getTransaction().commit();
-//			System.out.println("Updated.");
-//		}
-//		return album;
-//	}
 	@Override
 	public void systemExit()
 	{
 		session.close();
+		System.exit(0);
 	}
 
 }

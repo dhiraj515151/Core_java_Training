@@ -22,7 +22,8 @@ public class App
         	System.out.println("2. View Album.");
         	System.out.println("3. Find By Id.");
         	System.out.println("4. Delete By Id");
-        	System.out.println("5. exit.");
+        	//System.out.println("5. Update By Id");
+        	System.out.println("6. exit.");
         	int choice = Integer.parseInt(br.readLine());
         	switch(choice)
         	{
@@ -35,6 +36,7 @@ public class App
         		        Album al = new Album(albumName, d,new Photo(url));
         		        System.out.println(s.createAlbum(al));
         		        break;
+        		        
         		case 2: 
         				List<Album> list = s.getAlbums();
         		 		Iterator i = list.iterator();
@@ -44,22 +46,25 @@ public class App
         		 		}
         			    
         		 		break;
+        		 		
         		case 3: 
         				System.out.println("Enter id:");
         		        int id = Integer.parseInt(br.readLine());
         		        System.out.println(s.findById(id));
         		        break;
+        		        
         		case 4:
         				System.out.println("Enter id:");
-		         		int iddel = Integer.parseInt(br.readLine());
-		         		s.deleteById(iddel);
+		         		int idDel = Integer.parseInt(br.readLine());
+		         		
+		         		s.deleteById(idDel);
+		         		System.out.print("Delete Successful.");
 		         		break;
+		         		
 //        		case 5: 
-//        				System.out.println("Enter url:");
-//        				String url1 = br.readLine();
 //        		        System.out.println("Enter id:");
 //        		        int upid = Integer.parseInt(br.readLine());
-//        		        System.out.println(s.updateUrl(upid, url1, LocalDate.now()));
+//        		        System.out.print(s.updateById(id),url,LocalDate.now());
 //        		        break;
         		case 5:
         				s.systemExit();

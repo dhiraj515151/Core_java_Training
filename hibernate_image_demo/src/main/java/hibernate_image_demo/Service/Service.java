@@ -9,5 +9,6 @@ public interface Service {
 	public List<Album> getAlbums();
 	public Album findById(int id);
 	public void deleteById(int id);
+	public void updateById(int id);
 	public void systemExit();
 }

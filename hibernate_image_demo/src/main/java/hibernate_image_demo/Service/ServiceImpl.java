@@ -42,4 +42,10 @@ public class ServiceImpl implements Service {
 		
 	}
 
+	@Override
+	public void updateById(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
