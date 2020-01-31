@@ -17,8 +17,8 @@ public class CdController {
 	
 	}
 	@RequestMapping("/processForm")
-	public String processForm(@RequestParam("title") String title,@RequestParam("cdType") String cdType,@RequestParam("date") String date,Model model) {
-		
+	public String processForm(@RequestParam("title") String title,@RequestParam("cdType") 
+	String cdType,@RequestParam("date") String date,Model model) {
 		Cd cd=new Cd(title, cdType,date);
 		model.addAttribute("cd", cd);
 		return "process-form";

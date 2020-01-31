@@ -1,9 +1,8 @@
 package cd.config;
-
-
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class CdWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+	
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
@@ -18,9 +17,9 @@ public class CdWebInitializer extends AbstractAnnotationConfigDispatcherServletI
 
 	@Override
 	protected String[] getServletMappings() {
-		
 		return new String[] {"/"};
 	}
-
-	
 }
+	
+	
+
