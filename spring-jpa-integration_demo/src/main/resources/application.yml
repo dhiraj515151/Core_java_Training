@@ -1,13 +1,8 @@
 spring:
   application:
-    name: spring-jpa
-  datasource:
-    url: jdbc:mysql://localhost:3306/hr
+    name: spring-jpa  datasource:    url: jdbc:mysql://localhost:3306/hr
     username: root
     password: welcome
-  jpa:
-    hibernate:
-      ddl-auto: create
-     
-     
-  
+#  jpa:
+#    hibernate:
+#      ddl-auto: create# 

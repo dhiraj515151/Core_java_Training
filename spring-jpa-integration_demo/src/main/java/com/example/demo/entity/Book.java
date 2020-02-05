@@ -18,9 +18,7 @@ public class Book {
 	private int bookId;
 	@Column(name="book_name")
 	private String bookName;
-	@Column(name = "author")
 	private String author;
-	
 	
 	public int getBookId() {
 		return bookId;

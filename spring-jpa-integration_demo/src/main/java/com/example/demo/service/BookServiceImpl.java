@@ -27,8 +27,8 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	@Transactional
-	public List<Book> getAllBooks() 
-	{
+	public List<Book> getAllBooks() {
+		
 		return bookDAO.findAll();
 	}
 
@@ -46,5 +46,37 @@ public class BookServiceImpl implements BookService {
 		
 		return bookDAO.save(book);
 	}
+
+	@Override
+	public void deleteBookById(Integer bookId) {
+		bookDAO.deleteById(bookId);
+		
+	}
+
+	@Override
+	public void deleteAll() {
+		bookDAO.deleteAll();
+		
+	}
+
+	@Override
+	public List<Book> findByAuthor(String author) {
+		
+		return bookDAO.findByAuthor(author);
+	}
+
+	@Override
+	public List<Book> findByBookName(String bookName) {
+	
+		return bookDAO.findByBookName(bookName);
+	}
+
+	@Override
+	public List<Book> findByAuthorAndBookName(String author, String bookName) {
+		
+		return bookDAO.findByAuthorAndBookName(author, bookName);
+	}
+
+
 
 }

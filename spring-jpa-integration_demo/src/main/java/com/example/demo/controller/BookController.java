@@ -6,10 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -55,6 +57,7 @@ public class BookController {
 	{
 		return bookService.getAllBooks();
 	}
+	
 	@GetMapping("/books/{bookId}")
 	public Optional<Book> getBookById(@PathVariable Integer bookId) throws Exception
 	{
@@ -66,14 +69,51 @@ public class BookController {
 		
 		return book; 
 	}
+	
 	@PostMapping("/books")
 	public Book createBook(@RequestBody Book book)
 	
-		{	
-			book.setBookId(0);
-			return bookService.createBook(book);
-		}
-		
+	{	book.setBookId(0);
+		return bookService.createBook(book);
+	}
+
+	@DeleteMapping("/books/{bookId}")
+	public void deleteById(@PathVariable Integer bookId)
+	{
+		bookService.deleteBookById(bookId);
+	}
 	
+	@DeleteMapping("/books")
+	public void deleteAll()
+	{
+		bookService.deleteAll();
+	}
+	
+	//for update
+	@PutMapping("/books")
+	public Book updateBook(@RequestBody Book book)
+	
+	{	
+		return bookService.createBook(book);
+	}
+	//for searchning book  by  auhtor name
+	@GetMapping("/books/findByAuthor/{author}")
+	public List<Book> findByAuthor(@PathVariable String author)
+	{
+		return bookService.findByAuthor(author);
+	}
+
+	//for searching Book BY BOOK NAME
+	@GetMapping("/books/findByBookName/{bookName}")
+	public List<Book> findByBookName(@PathVariable String bookName)
+	{
+		return bookService.findByBookName(bookName);
+	}
+	//for searching by both name and author 
+	@GetMapping("/books/findByAuthorandBookName/{author}/{bookName}")
+	public List<Book> findByAuhtorandBookName(@PathVariable String author, String bookName)
+	{
+		return bookService.findByAuthorAndBookName(author, bookName);
+	}
 	
 }
