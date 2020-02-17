@@ -1,0 +1,42 @@
+<!-- <app-navbar></app-navbar>
+<app-header></app-header>
+<button class="btn btn-primary" (click)="onButtonClicked()">
+  Refresh Data
+</button>
+<div class="container">
+  <h1>Employee List</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees;
+      index as i;
+      odd as o;
+      even as e;
+      first as f;
+      last as l"[style.background]="o ? 'green': 'red'">
+      <td>{{ i }}  -   {{ o }} - {{ e }}</td>
+        <td>{{ employee.empId }}</td>
+        <td>{{ employee.empName }}</td>
+        <td>{{ employee.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<!-- <app-twowaydatabinding></app-twowaydatabinding> -->
+<!-- <app-parentchildrelation [parentvalue1]="firstName" [parentvalue2] = "lastName" [parentvalue3]="email"></app-parentchildrelation> -->
+<!-- <app-parentchildrelation [person]="personDetail"></app-parentchildrelation> -->
+<!-- <div class="container">
+  <h2>App Component</h2>
+  <h1> {{ message }}</h1>
+  <app-parentchildrelation (childEvent) = "message=$event"></app-parentchildrelation> 
+
+</div> -->
+<!-- <app-pipes></app-pipes> -->
+<app-employee></app-employee>
+<app-employeelist></app-employeelist>

@@ -1,0 +1,40 @@
+<p>pipes works!</p>
+<h1>Pipe Example</h1>
+<h1>{{ name | uppercase }}</h1>
+<h1>{{ name | lowercase }}</h1>
+<h1>{{ name | titlecase }}</h1>
+<br>
+<!-- <h1>{{ person | json }}</h1> -->
+<br>
+<h1>{{ currentDate }}</h1>
+<h1>{{ currentDate | date: 'shortDate'}}</h1>
+<h1>{{ currentDate | date: 'longDate'}}</h1>
+<h1>{{ currentDate | date: 'longTime'}}</h1>
+<br>
+<br>
+<div class="container">
+<h1 class="center">Employee Table</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th>Email</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of employees">
+           <td>{{ employee.empId }}</td>
+           <td>{{ employee.empName | titleDemo : employee.gender }}</td>
+           <td>{{ employee.gender}}</td>
+           <td>{{employee.salary | currency : 'INR'}}</td>
+           <td>{{ employee.email }}</td>
+           <td>{{ employee.dob | date : 'shortDate'}}</td>
+        </tr>
+    </tbody>
+
+</table>
+</div>
