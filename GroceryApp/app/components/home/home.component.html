@@ -1,7 +1,8 @@
+<app-header></app-header>
 <div class="container">
   <div class="row">
     <div class="col-sm" *ngFor="let cat of categories">
-      <div class="card" style="width: 18rem;">
+      <div class="card" (click)= "onSelectCategory(cat)" style="width: 18rem;">
         <img
           src="http://rjtmobile.com/grocery/images/{{ cat.catImage }}"
           class="card-img-top"
@@ -13,7 +14,7 @@
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a routerLink="/products" class="btn btn-primary">Shop Here</a>
         </div>
       </div>
     </div>

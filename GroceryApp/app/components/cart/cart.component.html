@@ -1,0 +1,25 @@
+<div class="container">
+    <br>
+  <h1 style="text-align: center;">Cart Items({{ cart.length }})</h1>
+  <table class="table">
+     
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>ProductName</th>
+        <th>Price</th>
+        <th>Unit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of cart">
+        <td><img src="{{ _image_url + product.image }}" width="90px" height="100px"/>    </td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.mrp*70 | currency : 'EUR'}}</td>
+        <td>{{product.unit}}</td>
+        <td><button><i class="fas fa-trash-alt"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
