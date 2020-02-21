@@ -6,12 +6,14 @@ import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 import { ProductsComponent } from "./components/products/products.component";
 
+
 const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "home", component: HomeComponent },
   { path: "products/:id", component: ProductsComponent },
-  { path: "cart", component: CartComponent }
+  { path: "cart", component: CartComponent },
+
 ];
 
 @NgModule({

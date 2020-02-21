@@ -1,1 +1,126 @@
-<p>register works!</p>
+<div class="container">
+  <h1
+    style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif ;"
+  >
+    Registration
+  </h1>
+  <br />
+  <form #userForm="ngForm">
+    <!-- {{ userForm.value | json }}
+    <br />
+    <br />
+    {{ userModel | json }}
+    <br><br> -->
+
+    <div class="form-group">
+      <label for="">UserName</label>
+      <input
+        #userName="ngModel"
+        [(ngModel)]="userModel.username"
+        name="username"
+        [class.is-invalid]="userName.invalid && userName.touched"
+        type="text"
+        class="form-control"
+        required
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="userName.valid || userName.untouched"
+      >
+        This is required field.....
+      </small>
+    </div>
+    <!-- {{ userName.touched }} -->
+
+    <div class="form-group">
+      <label for="">EmailId</label>
+      <input
+        [(ngModel)]="userModel.email"
+        name="email"
+        type="email"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input
+        [(ngModel)]="userModel.phone"
+        name="phone"
+        type="tel"
+        #phone="ngModel"
+        class="form-control"
+        required
+        pattern="[789][0-9]{9}"
+        [class.is-invalid]="phone.invalid || phone.touched"
+      />
+
+      <!-- <small
+        class="text-danger"
+        [class.d-none]="phone.valid || phone.untouched"
+      >
+        this is required and phone number should be valid.
+      </small>  -->
+
+      <div *ngIf="phone.errors && phone.invalid && phone.touched">
+        <small *ngIf="phone.errors.required" class="text-danger"
+          >This is required field</small
+        >
+        <small *ngIf="phone.errors.pattern" class="text-danger"
+          >Phone number is invalid.</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="">Category</label>
+      <select
+        [(ngModel)]="userModel.category"
+        name="category"
+        id=""
+        class="form-control"
+      >
+        <option value="">-----Please Select-----</option>
+        <option *ngFor="let category of categories">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-check">
+      <label for="">Gender</label> <br />
+      <div class="form-check">
+        <input
+          [(ngModel)]="userModel.gender"
+          type="radio"
+          id="male"
+          name="gender"
+          value="male"
+        />
+        <label for="male">Male</label><br />
+      </div>
+      <div class="form-check">
+        <input
+          [(ngModel)]="userModel.gender"
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+        />
+        <label for="female">Female</label><br />
+      </div>
+    </div>
+    <div class="form-check">
+      <input
+        [(ngModel)]="userModel.subscribe"
+        type="checkbox"
+        name="subscribe"
+        id=""
+      />Subscribe
+    </div>
+  </form>
+  <br />
+  <button [disabled]="userForm.invalid" class="btn btn-primary" type="submit">
+    Register
+  </button>
+</div>

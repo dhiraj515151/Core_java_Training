@@ -10,8 +10,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
-import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { RegisterComponent } from './components/register/register.component';
     HeaderComponent,
     ProductsComponent,
     CartComponent,
-    LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
