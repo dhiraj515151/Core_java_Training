@@ -1,0 +1,14 @@
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+    display:inline-block;
+    float: none;
+    vertical-align: top;
+}
+a:hover{
+    background-color:  thistle;
+    font-size: larger;
+    
+}
